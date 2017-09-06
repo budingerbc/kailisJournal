@@ -78,6 +78,10 @@ $(document).ready(function() {
   });
 });
 
+$(document).ready(function(){
+  $('#time').text(moment());
+});
+
 var Entry = require('./../js/journal.js').entryModule;
 
 $(document).ready(function() {
