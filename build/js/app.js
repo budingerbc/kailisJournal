@@ -5,10 +5,11 @@ function Entry(title, body) {
 }
 
 Entry.prototype.getWordCount = function(title, body) {
- var titleArray = title.split(" ");
- var bodyArray = body.split(" ");
- var wordCount = titleArray.length + bodyArray.length;
- return wordCount;
+
+  var titleArray = title.split(" ");
+  var bodyArray = body.split(" ");
+  var wordCount = titleArray.length + bodyArray.length;
+  return wordCount;
 };
 
 Entry.prototype.getVowelConsonantCount = function(title, body) {
@@ -19,12 +20,12 @@ Entry.prototype.getVowelConsonantCount = function(title, body) {
   var bodyArray = body.split('');
   for (var i = 0; i < titleArray.length; i++) {
     if (vowels.includes(titleArray[i])) {
-        vowelCount += 1;
-      }
-      else {
-        consonantCount += 1;
-      }
+      vowelCount += 1;
     }
+    else {
+      consonantCount += 1;
+    }
+  }
   for (var j = 0; j < bodyArray.length; j++) {
     if (vowels.includes(bodyArray[j])) {
       vowelCount += 1;
@@ -43,16 +44,16 @@ Entry.prototype.getTeaser = function(body) {
   if (wordArray.length < 9) {
     return (firstSentence + ".");
   }
-    else {
-     var firstEightWords = wordArray.slice(0,8).join(" ");
-     return firstEightWords;
-    }
- };
+  else {
+    var firstEightWords = wordArray.slice(0,8).join(" ");
+    return firstEightWords;
+  }
+};
 
 exports.entryModule = Entry;
 
 },{}],2:[function(require,module,exports){
-var Entry = require('./../js/journal.js').entryModule;
+var Entry = require('./../js/entry.js').entryModule;
 
 $(document).ready(function() {
   $('#journal-form').submit(function(event) {
@@ -65,7 +66,7 @@ $(document).ready(function() {
   });
 });
 
-var Entry = require('./../js/journal.js').entryModule;
+var Entry = require('./../js/entry.js').entryModule;
 
 $(document).ready(function() {
   $('#journal-form').submit(function(event) {
@@ -82,7 +83,7 @@ $(document).ready(function(){
   $('#time').text(moment());
 });
 
-var Entry = require('./../js/journal.js').entryModule;
+var Entry = require('./../js/entry.js').entryModule;
 
 $(document).ready(function() {
   $('#journal-form').submit(function(event) {
@@ -95,4 +96,4 @@ $(document).ready(function() {
   });
 });
 
-},{"./../js/journal.js":1}]},{},[2]);
+},{"./../js/entry.js":1}]},{},[2]);
